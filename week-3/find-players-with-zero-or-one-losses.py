@@ -11,11 +11,12 @@ class Solution:
                     di[key] += 1
                 else:
                     di[key]+=0
+        di=dict(sorted(di.items()))
         for player in di:
             if di[player] == 0:
                 temp1.append(player)
             elif di[player] == 1:
                 temp2.append(player)
-        ans.append(sorted(temp1))
-        ans.append(sorted(temp2))
+        ans.append(temp1)
+        ans.append(temp2)
         return ans

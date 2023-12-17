@@ -1,36 +1,37 @@
 class Bitset:
     def __init__(self, size: int):
-      self.s = ['0'] * size  # the original
-      self.r = ['1'] * size  # the reversed
-      self.cnt = 0
+      self.my_set = ['0'] * size  # the original
+      self.rev_set= ['1'] * size  # the reversed
+      self.ones = 0
+      self.size=size
     
     def fix(self, idx: int) -> None:
-      if self.s[idx] == '0':
-        self.cnt += 1
-      self.s[idx] = '1'
-      self.r[idx] = '0'
+      if self.my_set[idx] == '0':
+        self.ones += 1
+      self.my_set[idx] = '1'
+      self.rev_set[idx] = '0'
     
     def unfix(self, idx: int) -> None:
-      if self.s[idx] == '1':
-        self.cnt -= 1
-      self.s[idx] = '0'
-      self.r[idx] = '1'
+      if self.my_set[idx] == '1':
+        self.ones -= 1
+      self.my_set[idx] = '0'
+      self.rev_set[idx] = '1'
     
     def flip(self) -> None:
-      self.s, self.r = self.r, self.s
-      self.cnt = len(self.s) - self.cnt
+      self.my_set, self.rev_set = (self.rev_set, self.my_set)
+      self.ones = self.size - self.ones
     
     def all(self) -> bool:
-      return self.cnt == len(self.s)
+      return self.ones == len(self.my_set)
     
     def one(self) -> bool:
-      return self.cnt
+      return self.ones
     
     def count(self) -> int:
-      return self.cnt
+      return self.ones
     
     def toString(self) -> str:
-      return ''.join(self.s)
+      return ''.join(self.my_set)
 
 # Your Bitset object will be instantiated and called as such:
 # obj = Bitset(size)

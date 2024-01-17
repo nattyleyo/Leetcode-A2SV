@@ -13,7 +13,7 @@ class Solution:
         prefix[0]=nums[0]
         for i in range(1,len(nums)):
             prefix[i]=prefix[i-1]+nums[i]
-        print(prefix)
+        # print(prefix)
         for i in range(len(s)):
             temp=ord('a')-ord(s[i])
             temp%=26
@@ -32,4 +32,4 @@ class Solution:
 #0  1   2   0
 
 # 0   1   1  -2
-        return 'mm'
+        # return 'mm'

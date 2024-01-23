@@ -36,7 +36,6 @@ class MyLinkedList:
         if index == 0:
             self.addAtHead(val)
             return
-
         new_node = Node(val)
         current = self.head
         for _ in range(index - 1):

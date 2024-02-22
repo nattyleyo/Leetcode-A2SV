@@ -1,7 +1,7 @@
 class Solution:
     def simplifyPath(self, path: str) -> str:
         stack = []
-        li = path.split('/')
+        li = list(map(str,path.split('/')))
         print(li)
         for p in li:
             if not p or p == '.':

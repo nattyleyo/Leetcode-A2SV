@@ -4,11 +4,12 @@ class Solution:
         count = Counter(s)
         arr = [val for val in count.values()]
         arr.sort(reverse=True)
-        if len(arr) == 1:
+        n = len(arr)
+        if n == 1:
             return arr[0]
-        print(arr)
+        # print(arr)
         odd = False
-        for i in range(len(arr)):
+        for i in range(n):
             if arr[i]%2 != 0 and not odd :
                 max_len += arr[i]
                 odd = True      

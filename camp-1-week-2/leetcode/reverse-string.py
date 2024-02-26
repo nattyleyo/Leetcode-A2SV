@@ -11,7 +11,15 @@ class Solution:
         """
         Modifies the input list in-place to reverse its elements using recursion.
         """  
+        #with recursion
         start = 0
         end = len(s)
         self.myFunc( s,start,end )
+
+        #without recursion
+        
+        # n=len(s)
+        # for i in range(n//2):
+        #     if i!=n-1-i:
+        #         s[i],s[n-1-i]=s[n-1-i],s[i]
         

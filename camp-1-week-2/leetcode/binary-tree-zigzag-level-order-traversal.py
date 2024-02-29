@@ -9,13 +9,13 @@ class Solution:
         res = []
         level = 0
         count = defaultdict(list)
-        def postorder(root,level):
+        def inorder(root,level):
             if root:
                 level  += 1 
                 res.append((level,root.val))
-                postorder(root.left,level)
-                postorder(root.right,level)
-        postorder(root,level)
+                inorder(root.left,level)
+                inorder(root.right,level)
+        inorder(root,level)
         ans = []
         for i in range(len(res)):
             key = res[i][0]
